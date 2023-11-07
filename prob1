@@ -1,0 +1,27 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class GasireElementeComune {
+    public static void main(String[] args) {
+        // Definiți cele două șiruri
+        String[] a = {"java", "test", "university"};
+        String[] b = {"car", "university", "plane"};
+
+        // Inițializați o listă pentru a stoca elementele comune
+        List<String> elementeComune = new ArrayList<>();
+
+        // Parcurgeți primul șir și verificați dacă fiecare element este prezent în al doilea șir
+        for (String elementA : a) {
+            for (String elementB : b) {
+                if (elementA.equals(elementB)) {
+                    // Dacă elementul este prezent în ambele șiruri, adăugați-l în lista de elemente comune
+                    elementeComune.add(elementA);
+                    break; // Ieșiți din bucla internă pentru a evita adăugarea de elemente duplicate
+                }
+            }
+        }
+
+        // Afișați elementele comune
+        System.out.println("Elemente comune: " + elementeComune);
+    }
+}
