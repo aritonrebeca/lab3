@@ -1,0 +1,26 @@
+import java.util.Scanner;
+public class palindrom {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Introduceți un cuvânt pentru a verifica dacă este palindrom: ");
+        String cuvant = scanner.nextLine();
+
+        if (estePalindrom(cuvant)) {
+            System.out.println("Cuvântul '" + cuvant + "' este un palindrom.");
+        } else {
+            System.out.println("Cuvântul '" + cuvant + "' nu este un palindrom.");
+        }
+    }
+
+    // Funcție care verifică dacă un cuvânt este palindrom
+    public static boolean estePalindrom(String cuvant) {
+        int lungime = cuvant.length();
+        for (int i = 0; i < lungime / 2; i++) {
+            if (cuvant.charAt(i) != cuvant.charAt(lungime - i - 1)) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
