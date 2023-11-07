@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class SirFibonaci {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Introduceți numărul N pentru șirul Fibonacci: ");
+        int N = scanner.nextInt();
+
+        int numar1 = 0, numar2 = 1;
+        System.out.print("Șirul Fibonacci până la " + N + " este: ");
+
+        if (N >= 1) {
+            System.out.print(numar1 + " ");
+        }
+        if (N >= 2) {
+            System.out.print(numar2 + " ");
+        }
+
+        for (int i = 2; i < N; i++) {
+            int numarUrmator = numar1 + numar2;
+            if (numarUrmator <= N) {
+                System.out.print(numarUrmator + " ");
+                numar1 = numar2;
+                numar2 = numarUrmator;
+            } else {
+                break;
+            }
+        }
+    }
+}
